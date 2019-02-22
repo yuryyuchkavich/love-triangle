@@ -10,10 +10,16 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
         var a = preferences[i]-1;
         var b = preferences[a]-1;
         var c =preferences[b] -1;
-        if(preferences[i] == preferences[c]) {count ++;}
-        preferences[i] = 0;
-    }
+        var a1 = preferences[i];
+        var b1 = preferences[a];
+        var c1 =preferences[b];
+        
+        if((preferences[i] == preferences[c])&&(a!=b)&&(b!=c)&&(a1!=b1)&&(b1!=c1)&&(c1!=a1)) {count ++;
+         preferences[a] =null;
+        preferences[b]=-null;
+        preferences[c]=-null;}
+        }
     return count;
-    
+        
     // your implementation
 };
